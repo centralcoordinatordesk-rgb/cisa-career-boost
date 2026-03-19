@@ -10,10 +10,23 @@ interface LeadFormProps {
 export const LeadForm = ({ title, subtitle, ctaText }: LeadFormProps) => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", experience: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    try {
+      const res = await fetch("https://formspree.io/f/xqeyngjv", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (res.ok) setSubmitted(true);
+    } catch {
+      // silently fail
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -37,6 +50,7 @@ export const LeadForm = ({ title, subtitle, ctaText }: LeadFormProps) => {
 
       <input
         required
+        name="name"
         placeholder="Full Name"
         value={form.name}
         onChange={(e) => setForm({ ...form, name: e.target.value })}
@@ -45,6 +59,7 @@ export const LeadForm = ({ title, subtitle, ctaText }: LeadFormProps) => {
       <input
         required
         type="email"
+        name="email"
         placeholder="Email Address"
         value={form.email}
         onChange={(e) => setForm({ ...form, email: e.target.value })}
@@ -53,6 +68,7 @@ export const LeadForm = ({ title, subtitle, ctaText }: LeadFormProps) => {
       <input
         required
         type="tel"
+        name="phone"
         placeholder="Phone Number"
         value={form.phone}
         onChange={(e) => setForm({ ...form, phone: e.target.value })}
@@ -60,6 +76,7 @@ export const LeadForm = ({ title, subtitle, ctaText }: LeadFormProps) => {
       />
       <select
         required
+        name="experience"
         value={form.experience}
         onChange={(e) => setForm({ ...form, experience: e.target.value })}
         className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring text-muted-foreground"
@@ -71,8 +88,8 @@ export const LeadForm = ({ title, subtitle, ctaText }: LeadFormProps) => {
         <option value="10+">10+ years</option>
       </select>
 
-      <Button variant="cta" size="lg" className="w-full" type="submit">
-        {ctaText}
+      <Button variant="cta" size="lg" className="w-full" type="submit" disabled={submitting}>
+        {submitting ? "Submitting..." : ctaText}
       </Button>
 
       <p className="text-xs text-center text-muted-foreground">
