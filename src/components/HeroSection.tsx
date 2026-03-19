@@ -15,12 +15,23 @@ export const HeroSection = () => {
   };
 
   return (
-    <section className="bg-background py-12 md:py-20">
-      <div className="container">
-        {/* Logo */}
-        <div className="mb-8">
-          <img src={zocLogo} alt="ZOC Learnings Canada" className="h-12 md:h-14 w-auto" />
+    <>
+      {/* Header */}
+      <header className="bg-background sticky top-0 z-50">
+        <div className="container flex items-center justify-between py-4">
+          <img src={zocLogo} alt="ZOC Learnings Canada" className="h-10 md:h-12 w-auto" />
+          <a
+            href="tel:+1"
+            className="text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
+          >
+            Call Us
+          </a>
         </div>
+        <div className="border-b border-border" />
+      </header>
+
+      <section className="bg-background py-12 md:py-20">
+        <div className="container">
         <div className="grid lg:grid-cols-2 gap-10 items-start">
           {/* Left content */}
           <div className="space-y-6">
@@ -91,5 +102,6 @@ export const HeroSection = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
