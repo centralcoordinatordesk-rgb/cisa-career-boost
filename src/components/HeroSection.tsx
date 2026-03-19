@@ -17,6 +17,10 @@ export const HeroSection = () => {
   return (
     <section className="bg-background py-12 md:py-20">
       <div className="container">
+        {/* Logo */}
+        <div className="mb-8">
+          <img src={zocLogo} alt="ZOC Learnings Canada" className="h-12 md:h-14 w-auto" />
+        </div>
         <div className="grid lg:grid-cols-2 gap-10 items-start">
           {/* Left content */}
           <div className="space-y-6">
