@@ -92,7 +92,7 @@ export const HeroSection = () => {
           </div>
 
           {/* Right form */}
-          <div className="lg:sticky lg:top-8">
+          <div id="hero-form" className="lg:sticky lg:top-8">
             <LeadForm
               title="Get CISA Course Details"
               subtitle="Limited seats for upcoming batch"
