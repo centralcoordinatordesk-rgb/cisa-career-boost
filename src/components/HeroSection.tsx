@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Award, Globe, HeartHandshake, Leaf } from "lucide-react";
 import { LeadForm } from "./LeadForm";
+import zocLogo from "@/assets/zoc-logo.png";
 
 const badges = [
   { icon: Award, label: "18+ Years Training Experience" },
