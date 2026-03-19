@@ -82,10 +82,10 @@ export const HeroSection = () => {
             </div>
 
             <div className="flex flex-wrap gap-3 pt-2">
-              <Button variant="cta" size="lg" onClick={() => scrollToForm("final-form")}>
+              <Button variant="cta" size="lg" onClick={() => scrollToForm("hero-form")}>
                 Book Free CISA Consultation
               </Button>
-              <Button variant="ctaOutline" size="lg" onClick={() => scrollToForm("final-form")}>
+              <Button variant="ctaOutline" size="lg" onClick={() => scrollToForm("hero-form")}>
                 Get Course Details
               </Button>
             </div>
