@@ -4,7 +4,6 @@ import { FeaturesSection } from "@/components/FeaturesSection";
 import { FirstAttemptSection } from "@/components/FirstAttemptSection";
 import { InfographicsSection } from "@/components/InfographicsSection";
 import { WhoShouldSection } from "@/components/WhoShouldSection";
-import { CTASection, FinalFormSection } from "@/components/CTASections";
 import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 import { Footer } from "@/components/Footer";
 
@@ -16,8 +15,6 @@ const Index = () => (
     <InfographicsSection />
     <FirstAttemptSection />
     <WhoShouldSection />
-    <CTASection />
-    <FinalFormSection />
     <Footer />
     <StickyMobileCTA />
   </main>
