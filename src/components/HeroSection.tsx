@@ -21,10 +21,10 @@ export const HeroSection = () => {
         <div className="container flex items-center justify-between py-4">
           <img src={zocLogo} alt="ZOC Learnings Canada" className="h-10 md:h-12 w-auto" />
           <a
-            href="tel:+1"
+            href="tel:+14376082516"
             className="text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
           >
-            Call Us
+            Call Us: +1 437 608 2516
           </a>
         </div>
         <div className="border-b border-border" />
