@@ -21,7 +21,7 @@ export const LeadForm = ({ title, subtitle, ctaText }: LeadFormProps) => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-      if (res.ok) setSubmitted(true);
+      if (res.ok) window.location.href = "https://zoclearnings.com/thank-you/";
     } catch {
       // silently fail
     } finally {
